@@ -1,5 +1,5 @@
 ---
-title: "Better Know A Skill: Matt Pocock's Skills for Engineers"
+title: "Better Know A Skill:<br>Matt Pocock's<br><span style='display:inline-block; color:red; border:4px solid red; border-radius:4px; font-size:0.30em; font-weight:900; letter-spacing:0.15em; opacity:0.85; transform:rotate(-45deg); vertical-align:middle; margin-right:-50px; font-family:serif; text-shadow:1px 1px 2px rgba(180,0,0,0.4); box-shadow:2px 2px 4px rgba(180,0,0,0.3);'>PLANNING</span>Skills for Engineers"
 author: "ATL BitLab AI Builders #18"
 date: "2026-06-03"
 format:
@@ -15,8 +15,6 @@ format:
     smaller: true
 ---
 
----
-
 # What is a Claude Code Skill?
 
 ## Skills extend Claude's behavior
@@ -27,20 +25,49 @@ A **skill** is a markdown file that teaches Claude a new capability.
 - Lives in your personal library: `~/.claude/skills/<skill-name>/SKILL.md`
 - No code changes, no restarts — edit the file and it's live
 
-## Installing Matt's skills
+## Skills can be dangerous
 
-Matt Pocock's skills repo includes an install script that copies skills into your personal library.
+Skills run with your permissions, in your environment, with access to your files.
 
-```bash
-# Clone and install
-git clone https://github.com/mattpocock/skills
-cd skills
-./install.sh
-```
+Public skill marketplaces have a real security problem:
 
-Skills are then available in every Claude Code session as `/skill-name`.
+- **Credential theft** — skills that read AWS keys, tokens, and config files and exfiltrate them to attacker servers
+- **Malware installation** — skills that download and execute malicious payloads on your machine
+- **Memory poisoning** — hidden directives injected into agent memory files that persist even after the skill is removed
+- **Intent hijacking** — skills that silently execute unauthorized operations while appearing to do what you asked
 
----
+::: {.callout-warning}
+Security researchers have confirmed malicious skills in public marketplaces combining malicious code with prompt injection techniques.
+:::
+
+## The Three No's Principle
+
+Before installing any skill from outside your own team:
+
+::: {style="font-size: 0.75em;"}
+| No. | Rule | Why |
+|-----|------|-----|
+| **1** | No unknown authors | Skills are code — treat them like a dependency. Check the author's GitHub history. |
+| **2** | No excessive filesystem or network access | A skill that needs to read your `~/.aws` folder to "help with docs" is a red flag. |
+| **3** | No skills without a public, inspectable source | If you can't read the `SKILL.md` before installing, don't install it. |
+:::
+
+::: {.callout-tip}
+Matt's skills are open source, written by a known author, and fully inspectable before installation.
+:::
+
+::: {.callout-note}
+Three No's Principle via [JadenNews on Medium](https://medium.com/@JadenNews/warning-about-341-malicious-skills-ai-agent-security-has-become-web3s-weakest-entry-point-2804103a75b4)
+:::
+
+## Learn More: Skill Security
+
+| Source | What it covers |
+|--------|---------------|
+| [ThreatDown: Weaponizing Autonomy](https://www.threatdown.com/blog/weaponizing-autonomy-the-rise-of-malicious-ai-agent-skills/) | Attack vectors and memory poisoning in depth |
+| [Snyk: ToxicSkills Audit](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/) | First comprehensive security audit of a public skill marketplace |
+| [The Hacker News: ClawHavoc](https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html) | Campaign analysis and platform response |
+| [Medium: Warning About Malicious Skills](https://medium.com/@JadenNews/warning-about-341-malicious-skills-ai-agent-security-has-become-web3s-weakest-entry-point-2804103a75b4) | User-facing framing and the Three No's Principle origin |
 
 # Meet Matt Pocock
 
@@ -67,7 +94,18 @@ Today we focus on three skills that form a **planning pipeline**:
 | `/to-prd` | Turn the sharpened idea into a Product Requirements Document |
 | `/to-issues` | Break the PRD into agent-ready vertical slices |
 
----
+## Installing Matt's skills
+
+Matt Pocock's skills repo includes an install script that copies skills into your personal library.
+
+```bash
+# Clone and install
+git clone https://github.com/mattpocock/skills
+cd skills
+./link-skills.sh
+```
+
+Skills are then available in every Claude Code session as `/skill-name`.
 
 # The Planning Pipeline
 
@@ -88,8 +126,6 @@ flowchart TD
 ```
 
 Each skill picks up where the previous one left off, building on the conversation context.
-
----
 
 # `/grill-with-docs`
 
@@ -125,8 +161,6 @@ explore the codebase instead.
 
 *Switch to terminal — run `/grill-with-docs` on the CLI task tracker repo*
 
----
-
 # `/to-prd`
 
 ## What it does
@@ -153,7 +187,7 @@ interface which rarely changes.
 ```
 
 ::: {.callout-tip}
-**A Philosophy of Software Design** — John Ousterhout
+<img src='images/a_philosophy_of_software_design_cover_amazon_20260603.jpg' style='height:200px; vertical-align:middle; margin-right:8px;'>**A Philosophy of Software Design** — John Ousterhout
 :::
 
 ## DEMO {background-color="#1a1a2e"}
@@ -161,8 +195,6 @@ interface which rarely changes.
 ### `/to-prd`
 
 *Switch to terminal — run `/to-prd` continuing from the grilling session*
-
----
 
 # `/to-issues`
 
@@ -191,7 +223,7 @@ end-to-end, NOT a horizontal slice of one layer.
 ```
 
 ::: {.callout-tip}
-**The Pragmatic Programmer** — David Thomas & Andrew Hunt
+<img src='images/the_pragmatic_programmer_cover_amazon_20260603.jpg' style='height:200px; vertical-align:middle; margin-right:8px;'>**The Pragmatic Programmer** — David Thomas & Andrew Hunt
 :::
 
 ## DEMO {background-color="#1a1a2e"}
@@ -199,8 +231,6 @@ end-to-end, NOT a horizontal slice of one layer.
 ### `/to-issues`
 
 *Switch to terminal — run `/to-issues` on the PRD*
-
----
 
 # What Just Happened?
 
@@ -223,22 +253,35 @@ Each issue produced by `/to-issues`:
 
 A fleet of parallel agents can now pick up the AFK issues and start building immediately.
 
----
-
 # Classic SE Still Matters
 
 ## The books are in the skills
 
 Matt's skills aren't just prompt wrappers — they encode opinions from decades of software engineering thought.
 
-| Book | Author | Concept in the skills |
-|------|--------|----------------------|
-| *A Philosophy of Software Design* | John Ousterhout | Deep modules in `/to-prd` |
-| *The Pragmatic Programmer* | Thomas & Hunt | Tracer bullets in `/to-issues` |
+<table>
+<thead><tr>
+  <th colspan="2">Book</th>
+  <th>Author</th>
+  <th>Concept in the skills</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><img src='images/a_philosophy_of_software_design_cover_amazon_20260603.jpg' style='height:150px; vertical-align:middle;'></td>
+  <td>*A Philosophy of Software Design*</td>
+  <td>John Ousterhout</td>
+  <td>Deep modules in <br/><code>/to-prd</code></td>
+</tr>
+<tr>
+  <td><img src='images/the_pragmatic_programmer_cover_amazon_20260603.jpg' style='height:150px; vertical-align:middle;'></td>
+  <td>*The Pragmatic Programmer*</td>
+  <td>Thomas &amp; Hunt</td>
+  <td>Tracer bullets in <br/><code>/to-issues</code></td>
+</tr>
+</tbody>
+</table>
 
 The skills force the AI to think the way experienced engineers think — not just generate code, but design well.
-
----
 
 # Where to Go Next
 
@@ -250,23 +293,48 @@ The skills force the AI to think the way experienced engineers think — not jus
 - "Software Fundamentals Matter More Than Ever": [youtube.com/watch?v=v4F1gFy-hqg](https://www.youtube.com/watch?v=v4F1gFy-hqg)
 - YouTube channel: [youtube.com/channel/UCswG6FSbgZjbWtdf_hMLaow](https://www.youtube.com/channel/UCswG6FSbgZjbWtdf_hMLaow)
 
+
 ## Further Reading
 
-| Book | Author |
-|------|--------|
-| *A Philosophy of Software Design* | John Ousterhout |
-| *The Pragmatic Programmer* | David Thomas, Andrew Hunt |
-| *The Design of Design* | Frederick P. Brooks |
-| *Domain-Driven Design* | Eric Evans |
-| *Extreme Programming Explained* | Kent Beck |
+```{=html}
+<div style="display: flex; justify-content: space-evenly; align-items: flex-start; width: 100%; padding-top: 8px;">
+
+  <div style="text-align: center; width: 175px;">
+    <img src='images/a_philosophy_of_software_design_cover_amazon_20260603.jpg' style='height: 175px;'>
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">A Philosophy of Software Design</div>
+    <div style="font-size: 0.72em; color: #555;">John Ousterhout</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src='images/the_pragmatic_programmer_cover_amazon_20260603.jpg' style='height: 175px;'>
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">The Pragmatic Programmer</div>
+    <div style="font-size: 0.72em; color: #555;">Thomas &amp; Hunt</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src='images/the_design_of_design_cover_amazon_20260603.jpg' style='height: 175px;'>
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">The Design of Design</div>
+    <div style="font-size: 0.72em; color: #555;">Frederick P. Brooks</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src='images/domain_driven_design_cover_amazon_20260603.jpg' style='height: 175px;'>
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">Domain-Driven Design</div>
+    <div style="font-size: 0.72em; color: #555;">Eric Evans</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src='images/extreme_programming_explained_2nd_ed_cover_amazon_20260603.jpg' style='height: 175px;'>
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">Extreme Programming Explained</div>
+    <div style="font-size: 0.72em; color: #555;">Kent Beck</div>
+  </div>
+
+</div>
+```
 
 ## Try it tonight
 
-1. Install Matt's skills: `git clone https://github.com/mattpocock/skills && ./install.sh`
+1. Install Matt's skills: `git clone https://github.com/mattpocock/skills && ./link-skills.sh`
 2. Pick a project you've been putting off starting
 3. Run `/grill-with-docs`, then `/to-prd`, then `/to-issues`
 4. Hand the issues to an agent and watch it go
-
----
-
-# Q&A
