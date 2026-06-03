@@ -302,7 +302,7 @@ The skills force the AI to think the way experienced engineers think — not jus
 
 - Skills repo + install script: [github.com/mattpocock/skills](https://github.com/mattpocock/skills)
 - "Software Fundamentals Matter More Than Ever": [youtube.com/watch?v=v4F1gFy-hqg](https://www.youtube.com/watch?v=v4F1gFy-hqg)
-- YouTube channel: [youtube.com/channel/UCswG6FSbgZjbWtdf_hMLaow](https://www.youtube.com/channel/UCswG6FSbgZjbWtdf_hMLaow)
+- YouTube channel: [https://www.youtube.com/@mattpocockuk](https://www.youtube.com/@mattpocockuk)
 
 
 ## Further Reading
