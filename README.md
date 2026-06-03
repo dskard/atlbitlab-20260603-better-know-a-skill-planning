@@ -1,2 +1,1 @@
-# atlbitlab-20260603-better-know-a-skill-planning
-Better Know A Skill - Planning
+# AiTL AI Builders #18 Lunch & Learn: Better Know A Skill - Planning

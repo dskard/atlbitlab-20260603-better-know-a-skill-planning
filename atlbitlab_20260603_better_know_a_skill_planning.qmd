@@ -1,0 +1,272 @@
+---
+title: "Better Know A Skill: Matt Pocock's Skills for Engineers"
+author: "ATL BitLab AI Builders #18"
+date: "2026-06-03"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    smaller: true
+---
+
+---
+
+# What is a Claude Code Skill?
+
+## Skills extend Claude's behavior
+
+A **skill** is a markdown file that teaches Claude a new capability.
+
+- Invoke manually with `/skill-name` in Claude Code
+- Lives in your personal library: `~/.claude/skills/<skill-name>/SKILL.md`
+- No code changes, no restarts — edit the file and it's live
+
+## Installing Matt's skills
+
+Matt Pocock's skills repo includes an install script that copies skills into your personal library.
+
+```bash
+# Clone and install
+git clone https://github.com/mattpocock/skills
+cd skills
+./install.sh
+```
+
+Skills are then available in every Claude Code session as `/skill-name`.
+
+---
+
+# Meet Matt Pocock
+
+## Who is Matt Pocock?
+
+- TypeScript educator and open source author
+- Creator of popular TS learning resources (Total TypeScript)
+- Recently turned his attention to AI tooling and Claude Code skills
+- Thesis: **classic software engineering principles matter more, not less, in the AI era**
+
+::: {.callout-note}
+"Software Fundamentals Matter More Than Ever" — [YouTube](https://www.youtube.com/watch?v=v4F1gFy-hqg)
+:::
+
+## His skills for engineers
+
+Matt's skills repo: [github.com/mattpocock/skills](https://github.com/mattpocock/skills)
+
+Today we focus on three skills that form a **planning pipeline**:
+
+| Skill | Purpose |
+|-------|---------|
+| `/grill-with-docs` | Sharpen your idea through relentless questioning |
+| `/to-prd` | Turn the sharpened idea into a Product Requirements Document |
+| `/to-issues` | Break the PRD into agent-ready vertical slices |
+
+---
+
+# The Planning Pipeline
+
+## From rough idea to agent-ready issues
+
+```{mermaid}
+%%| fig-align: center
+flowchart TD
+  I["`Rough idea`"] --> A["`use
+ /grill-with-docs
+ to sharp domain model`"]
+  A --> B["`use
+ /to-prd
+ to create the PRD`"]
+  B --> C["`use
+ /to-issues
+ to create agent-ready issues`"]
+```
+
+Each skill picks up where the previous one left off, building on the conversation context.
+
+---
+
+# `/grill-with-docs`
+
+## What it does
+
+Interviews you relentlessly about your plan, one question at a time, until the domain is sharp and all ambiguity is resolved.
+
+| | |
+|---|---|
+| **Input** | Your plan or idea (as conversation context) |
+| **Output** | Resolved terminology, updated `CONTEXT.md`, optional ADRs |
+| **When to use** | Before writing any spec — when the language is fuzzy |
+| **Key behavior** | One question at a time, recommended answer included |
+
+## Inside the skill
+
+```markdown
+Interview me relentlessly about every aspect of this plan
+until we reach a shared understanding. Walk down each branch
+of the design tree, resolving dependencies between decisions
+one-by-one. For each question, provide your recommended answer.
+
+Ask the questions one at a time, waiting for feedback on each
+question before continuing.
+
+If a question can be answered by exploring the codebase,
+explore the codebase instead.
+```
+
+## DEMO {background-color="#1a1a2e"}
+
+### `/grill-with-docs`
+
+*Switch to terminal — run `/grill-with-docs` on the CLI task tracker repo*
+
+---
+
+# `/to-prd`
+
+## What it does
+
+Synthesizes the conversation context into a structured PRD and publishes it to the issue tracker. No additional interviewing — it works from what's already been established.
+
+| | |
+|---|---|
+| **Input** | Conversation context from `/grill-with-docs` + codebase |
+| **Output** | PRD published as a GitHub issue |
+| **When to use** | After grilling, when the domain is clear |
+| **Key behavior** | Looks for deep modules; no re-interviewing |
+
+## Inside the skill
+
+```markdown
+Sketch out the major modules you will need to build or modify
+to complete the implementation. Actively look for opportunities
+to extract deep modules that can be tested in isolation.
+
+A deep module (as opposed to a shallow module) is one which
+encapsulates a lot of functionality in a simple, testable
+interface which rarely changes.
+```
+
+::: {.callout-tip}
+**A Philosophy of Software Design** — John Ousterhout
+:::
+
+## DEMO {background-color="#1a1a2e"}
+
+### `/to-prd`
+
+*Switch to terminal — run `/to-prd` continuing from the grilling session*
+
+---
+
+# `/to-issues`
+
+## What it does
+
+Breaks the PRD into independently-grabbable issues using vertical slices. Each issue cuts through all layers end-to-end and is either AFK (agent can run it) or HITL (needs human interaction).
+
+| | |
+|---|---|
+| **Input** | PRD from `/to-prd` (issue number or conversation context) |
+| **Output** | GitHub issues published in dependency order |
+| **When to use** | After PRD is approved |
+| **Key behavior** | Thin vertical slices; AFK vs HITL classification |
+
+## Inside the skill
+
+```markdown
+Break the plan into tracer bullet issues. Each issue is a
+thin vertical slice that cuts through ALL integration layers
+end-to-end, NOT a horizontal slice of one layer.
+
+- Each slice delivers a narrow but COMPLETE path through
+  every layer (schema, API, UI, tests)
+- A completed slice is demoable or verifiable on its own
+- Prefer many thin slices over few thick ones
+```
+
+::: {.callout-tip}
+**The Pragmatic Programmer** — David Thomas & Andrew Hunt
+:::
+
+## DEMO {background-color="#1a1a2e"}
+
+### `/to-issues`
+
+*Switch to terminal — run `/to-issues` on the PRD*
+
+---
+
+# What Just Happened?
+
+## From idea to execution-ready plan
+
+In three skill invocations, we went from a rough idea to:
+
+- A **CONTEXT.md** with resolved domain terminology
+- A **PRD** published as a GitHub issue with user stories, modules, and testing decisions
+- A set of **vertical slice issues**, each independently grabbable by an agent
+
+## The issues are agent-ready
+
+Each issue produced by `/to-issues`:
+
+- Describes an end-to-end behavior (not a layer)
+- Has acceptance criteria
+- Declares its blockers
+- Is classified AFK (agent can run it) or HITL (human decision needed)
+
+A fleet of parallel agents can now pick up the AFK issues and start building immediately.
+
+---
+
+# Classic SE Still Matters
+
+## The books are in the skills
+
+Matt's skills aren't just prompt wrappers — they encode opinions from decades of software engineering thought.
+
+| Book | Author | Concept in the skills |
+|------|--------|----------------------|
+| *A Philosophy of Software Design* | John Ousterhout | Deep modules in `/to-prd` |
+| *The Pragmatic Programmer* | Thomas & Hunt | Tracer bullets in `/to-issues` |
+
+The skills force the AI to think the way experienced engineers think — not just generate code, but design well.
+
+---
+
+# Where to Go Next
+
+## Resources
+
+**Matt Pocock**
+
+- Skills repo + install script: [github.com/mattpocock/skills](https://github.com/mattpocock/skills)
+- "Software Fundamentals Matter More Than Ever": [youtube.com/watch?v=v4F1gFy-hqg](https://www.youtube.com/watch?v=v4F1gFy-hqg)
+- YouTube channel: [youtube.com/channel/UCswG6FSbgZjbWtdf_hMLaow](https://www.youtube.com/channel/UCswG6FSbgZjbWtdf_hMLaow)
+
+## Further Reading
+
+| Book | Author |
+|------|--------|
+| *A Philosophy of Software Design* | John Ousterhout |
+| *The Pragmatic Programmer* | David Thomas, Andrew Hunt |
+| *The Design of Design* | Frederick P. Brooks |
+| *Domain-Driven Design* | Eric Evans |
+| *Extreme Programming Explained* | Kent Beck |
+
+## Try it tonight
+
+1. Install Matt's skills: `git clone https://github.com/mattpocock/skills && ./install.sh`
+2. Pick a project you've been putting off starting
+3. Run `/grill-with-docs`, then `/to-prd`, then `/to-issues`
+4. Hand the issues to an agent and watch it go
+
+---
+
+# Q&A
