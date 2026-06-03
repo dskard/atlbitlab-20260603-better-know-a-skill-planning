@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.7">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Derrick Kearney">
+<meta name="dcterms.date" content="2026-06-03">
+
+<title>Better Know A Skill: Matt Pocock’s PLANNINGSkills for Engineers</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/clipboard/clipboard.min.js"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/popper.min.js"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/anchor.min.js"></script>
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/quarto-syntax-highlighting-c02e96a55a3fac3aceec3c7506c22d80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/bootstrap/bootstrap-d53bdece00684a52d4a5fcad0223cf2c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-a-claude-code-skill" id="toc-what-is-a-claude-code-skill" class="nav-link active" data-scroll-target="#what-is-a-claude-code-skill">What is a Claude Code Skill?</a>
+  <ul class="collapse">
+  <li><a href="#skills-extend-claudes-behavior" id="toc-skills-extend-claudes-behavior" class="nav-link" data-scroll-target="#skills-extend-claudes-behavior">Skills extend Claude’s behavior</a></li>
+  <li><a href="#skills-can-be-dangerous" id="toc-skills-can-be-dangerous" class="nav-link" data-scroll-target="#skills-can-be-dangerous">Skills can be dangerous</a></li>
+  <li><a href="#the-three-nos-principle" id="toc-the-three-nos-principle" class="nav-link" data-scroll-target="#the-three-nos-principle">The Three No’s Principle</a></li>
+  <li><a href="#learn-more-skill-security" id="toc-learn-more-skill-security" class="nav-link" data-scroll-target="#learn-more-skill-security">Learn More: Skill Security</a></li>
+  </ul></li>
+  <li><a href="#meet-matt-pocock" id="toc-meet-matt-pocock" class="nav-link" data-scroll-target="#meet-matt-pocock">Meet Matt Pocock</a>
+  <ul class="collapse">
+  <li><a href="#who-is-matt-pocock" id="toc-who-is-matt-pocock" class="nav-link" data-scroll-target="#who-is-matt-pocock">Who is Matt Pocock?</a></li>
+  <li><a href="#his-skills-for-engineers" id="toc-his-skills-for-engineers" class="nav-link" data-scroll-target="#his-skills-for-engineers">His skills for engineers</a></li>
+  <li><a href="#installing-matts-skills" id="toc-installing-matts-skills" class="nav-link" data-scroll-target="#installing-matts-skills">Installing Matt’s skills</a></li>
+  </ul></li>
+  <li><a href="#the-planning-pipeline" id="toc-the-planning-pipeline" class="nav-link" data-scroll-target="#the-planning-pipeline">The Planning Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#from-rough-idea-to-agent-ready-issues" id="toc-from-rough-idea-to-agent-ready-issues" class="nav-link" data-scroll-target="#from-rough-idea-to-agent-ready-issues">From rough idea to agent-ready issues</a></li>
+  </ul></li>
+  <li><a href="#grill-with-docs" id="toc-grill-with-docs" class="nav-link" data-scroll-target="#grill-with-docs"><code>/grill-with-docs</code></a>
+  <ul class="collapse">
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
+  <li><a href="#inside-the-skill" id="toc-inside-the-skill" class="nav-link" data-scroll-target="#inside-the-skill">Inside the skill</a></li>
+  <li><a href="#demo" id="toc-demo" class="nav-link" data-scroll-target="#demo">DEMO</a>
+  <ul class="collapse">
+  <li><a href="#grill-with-docs-1" id="toc-grill-with-docs-1" class="nav-link" data-scroll-target="#grill-with-docs-1"><code>/grill-with-docs</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#to-prd" id="toc-to-prd" class="nav-link" data-scroll-target="#to-prd"><code>/to-prd</code></a>
+  <ul class="collapse">
+  <li><a href="#what-it-does-1" id="toc-what-it-does-1" class="nav-link" data-scroll-target="#what-it-does-1">What it does</a></li>
+  <li><a href="#inside-the-skill-1" id="toc-inside-the-skill-1" class="nav-link" data-scroll-target="#inside-the-skill-1">Inside the skill</a></li>
+  <li><a href="#demo-1" id="toc-demo-1" class="nav-link" data-scroll-target="#demo-1">DEMO</a>
+  <ul class="collapse">
+  <li><a href="#to-prd-1" id="toc-to-prd-1" class="nav-link" data-scroll-target="#to-prd-1"><code>/to-prd</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#to-issues" id="toc-to-issues" class="nav-link" data-scroll-target="#to-issues"><code>/to-issues</code></a>
+  <ul class="collapse">
+  <li><a href="#what-it-does-2" id="toc-what-it-does-2" class="nav-link" data-scroll-target="#what-it-does-2">What it does</a></li>
+  <li><a href="#inside-the-skill-2" id="toc-inside-the-skill-2" class="nav-link" data-scroll-target="#inside-the-skill-2">Inside the skill</a></li>
+  <li><a href="#demo-2" id="toc-demo-2" class="nav-link" data-scroll-target="#demo-2">DEMO</a>
+  <ul class="collapse">
+  <li><a href="#to-issues-1" id="toc-to-issues-1" class="nav-link" data-scroll-target="#to-issues-1"><code>/to-issues</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#what-just-happened" id="toc-what-just-happened" class="nav-link" data-scroll-target="#what-just-happened">What Just Happened?</a>
+  <ul class="collapse">
+  <li><a href="#from-idea-to-execution-ready-plan" id="toc-from-idea-to-execution-ready-plan" class="nav-link" data-scroll-target="#from-idea-to-execution-ready-plan">From idea to execution-ready plan</a></li>
+  <li><a href="#the-issues-are-agent-ready" id="toc-the-issues-are-agent-ready" class="nav-link" data-scroll-target="#the-issues-are-agent-ready">The issues are agent-ready</a></li>
+  </ul></li>
+  <li><a href="#classic-se-still-matters" id="toc-classic-se-still-matters" class="nav-link" data-scroll-target="#classic-se-still-matters">Classic SE Still Matters</a>
+  <ul class="collapse">
+  <li><a href="#the-books-are-in-the-skills" id="toc-the-books-are-in-the-skills" class="nav-link" data-scroll-target="#the-books-are-in-the-skills">The books are in the skills</a></li>
+  </ul></li>
+  <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next">Where to Go Next</a>
+  <ul class="collapse">
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  <li><a href="#try-it-tonight" id="toc-try-it-tonight" class="nav-link" data-scroll-target="#try-it-tonight">Try it tonight</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="atlbitlab_20260603_better_know_a_skill_planning_slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Better Know A Skill:<br>Matt Pocock’s<br><span style="display:inline-block; color:red; border:4px solid red; border-radius:4px; font-size:0.30em; font-weight:900; letter-spacing:0.15em; opacity:0.85; transform:rotate(-45deg); vertical-align:middle; margin-right:-50px; font-family:serif; text-shadow:1px 1px 2px rgba(180,0,0,0.4); box-shadow:2px 2px 4px rgba(180,0,0,0.3);">PLANNING</span>Skills for Engineers</h1>
+<p class="subtitle lead">ATL BitLab AI Builders #18</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Derrick Kearney </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 3, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-a-claude-code-skill" class="level1">
+<h1>What is a Claude Code Skill?</h1>
+<section id="skills-extend-claudes-behavior" class="level2">
+<h2 class="anchored" data-anchor-id="skills-extend-claudes-behavior">Skills extend Claude’s behavior</h2>
+<p>A <strong>skill</strong> is a markdown file that teaches Claude a new capability.</p>
+<ul>
+<li>Invoke manually with <code>/skill-name</code> in Claude Code</li>
+<li>Lives in your personal library: <code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code></li>
+<li>No code changes, no restarts — edit the file and it’s live</li>
+</ul>
+</section>
+<section id="skills-can-be-dangerous" class="level2">
+<h2 class="anchored" data-anchor-id="skills-can-be-dangerous">Skills can be dangerous</h2>
+<p>Skills run with your permissions, in your environment, with access to your files.</p>
+<p>Public skill marketplaces have a real security problem:</p>
+<ul>
+<li><strong>Credential theft</strong> — skills that read AWS keys, tokens, and config files and exfiltrate them to attacker servers</li>
+<li><strong>Malware installation</strong> — skills that download and execute malicious payloads on your machine</li>
+<li><strong>Memory poisoning</strong> — hidden directives injected into agent memory files that persist even after the skill is removed</li>
+<li><strong>Intent hijacking</strong> — skills that silently execute unauthorized operations while appearing to do what you asked</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Security researchers have confirmed malicious skills in public marketplaces combining malicious code with prompt injection techniques.</p>
+</div>
+</div>
+</section>
+<section id="the-three-nos-principle" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-nos-principle">The Three No’s Principle</h2>
+<p>Before installing any skill from outside your own team:</p>
+<div style="font-size: 0.75em;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 37%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Rule</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>No unknown authors</td>
+<td>Skills are code — treat them like a dependency. Check the author’s GitHub history.</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>No excessive filesystem or network access</td>
+<td>A skill that needs to read your <code>~/.aws</code> folder to “help with docs” is a red flag.</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>No skills without a public, inspectable source</td>
+<td>If you can’t read the <code>SKILL.md</code> before installing, don’t install it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Matt’s skills are open source, written by a known author, and fully inspectable before installation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Three No’s Principle via <a href="https://medium.com/@JadenNews/warning-about-341-malicious-skills-ai-agent-security-has-become-web3s-weakest-entry-point-2804103a75b4">JadenNews on Medium</a></p>
+</div>
+</div>
+</section>
+<section id="learn-more-skill-security" class="level2">
+<h2 class="anchored" data-anchor-id="learn-more-skill-security">Learn More: Skill Security</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.threatdown.com/blog/weaponizing-autonomy-the-rise-of-malicious-ai-agent-skills/">ThreatDown: Weaponizing Autonomy</a></td>
+<td>Attack vectors and memory poisoning in depth</td>
+</tr>
+<tr class="even">
+<td><a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">Snyk: ToxicSkills Audit</a></td>
+<td>First comprehensive security audit of a public skill marketplace</td>
+</tr>
+<tr class="odd">
+<td><a href="https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html">The Hacker News: ClawHavoc</a></td>
+<td>Campaign analysis and platform response</td>
+</tr>
+<tr class="even">
+<td><a href="https://medium.com/@JadenNews/warning-about-341-malicious-skills-ai-agent-security-has-become-web3s-weakest-entry-point-2804103a75b4">Medium: Warning About Malicious Skills</a></td>
+<td>User-facing framing and the Three No’s Principle origin</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="meet-matt-pocock" class="level1">
+<h1>Meet Matt Pocock</h1>
+<section id="who-is-matt-pocock" class="level2">
+<h2 class="anchored" data-anchor-id="who-is-matt-pocock">Who is Matt Pocock?</h2>
+<ul>
+<li>TypeScript educator and open source author</li>
+<li>Creator of popular TS learning resources (Total TypeScript)</li>
+<li>Recently turned his attention to AI tooling and Claude Code skills</li>
+<li>Thesis: <strong>classic software engineering principles matter more, not less, in the AI era</strong></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Software Fundamentals Matter More Than Ever” — <a href="https://www.youtube.com/watch?v=v4F1gFy-hqg">YouTube</a></p>
+</div>
+</div>
+</section>
+<section id="his-skills-for-engineers" class="level2">
+<h2 class="anchored" data-anchor-id="his-skills-for-engineers">His skills for engineers</h2>
+<p>Matt’s skills repo: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+<p>Today we focus on three skills that form a <strong>planning pipeline</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Skill</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/grill-with-docs</code></td>
+<td>Sharpen your idea through relentless questioning</td>
+</tr>
+<tr class="even">
+<td><code>/to-prd</code></td>
+<td>Turn the sharpened idea into a Product Requirements Document</td>
+</tr>
+<tr class="odd">
+<td><code>/to-issues</code></td>
+<td>Break the PRD into agent-ready vertical slices</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="installing-matts-skills" class="level2">
+<h2 class="anchored" data-anchor-id="installing-matts-skills">Installing Matt’s skills</h2>
+<p>Matt Pocock’s skills repo includes an install script that copies skills into your personal library.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone and install</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/mattpocock/skills</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> skills</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./link-skills.sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Skills are then available in every Claude Code session as <code>/skill-name</code>.</p>
+</section>
+</section>
+<section id="the-planning-pipeline" class="level1">
+<h1>The Planning Pipeline</h1>
+<section id="from-rough-idea-to-agent-ready-issues" class="level2">
+<h2 class="anchored" data-anchor-id="from-rough-idea-to-agent-ready-issues">From rough idea to agent-ready issues</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  I["`Rough idea`"] --&gt; A["`use
+ /grill-with-docs
+ to sharp domain model`"]
+  A --&gt; B["`use
+ /to-prd
+ to create the PRD`"]
+  B --&gt; C["`use
+ /to-issues
+ to create agent-ready issues`"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Each skill picks up where the previous one left off, building on the conversation context.</p>
+</section>
+</section>
+<section id="grill-with-docs" class="level1">
+<h1><code>/grill-with-docs</code></h1>
+<section id="what-it-does" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-does">What it does</h2>
+<p>Interviews you relentlessly about your plan, one question at a time, until the domain is sharp and all ambiguity is resolved.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td>Your plan or idea (as conversation context)</td>
+</tr>
+<tr class="even">
+<td><strong>Output</strong></td>
+<td>Resolved terminology, updated <code>CONTEXT.md</code>, optional ADRs</td>
+</tr>
+<tr class="odd">
+<td><strong>When to use</strong></td>
+<td>Before writing any spec — when the language is fuzzy</td>
+</tr>
+<tr class="even">
+<td><strong>Key behavior</strong></td>
+<td>One question at a time, recommended answer included</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inside-the-skill" class="level2">
+<h2 class="anchored" data-anchor-id="inside-the-skill">Inside the skill</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Interview me relentlessly about every aspect of this plan</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>until we reach a shared understanding. Walk down each branch</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>of the design tree, resolving dependencies between decisions</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>one-by-one. For each question, provide your recommended answer.</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Ask the questions one at a time, waiting for feedback on each</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>question before continuing.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>If a question can be answered by exploring the codebase,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>explore the codebase instead.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="demo" class="level2" data-background-color="#1a1a2e">
+<h2 data-background-color="#1a1a2e" class="anchored" data-anchor-id="demo">DEMO</h2>
+<section id="grill-with-docs-1" class="level3">
+<h3 class="anchored" data-anchor-id="grill-with-docs-1"><code>/grill-with-docs</code></h3>
+<p><em>Switch to terminal — run <code>/grill-with-docs</code> on the CLI task tracker repo</em></p>
+<p><br></p>
+<p><em><code>/grill-with-docs</code> we will be building a cli based task tracker in rust. we should probably use a sqlite database and store it and any other config files somewhere in the user’s home directory. the user should be able to work with the task tracker from the command line. i would like an interactive terminal user interface if possible. the user starts the cli program, can see what tasks there are and what state each teask is in, the user can add notes to tasks, move tasks between states, and set blockers showing that one task depends on another task being complete. let’s talk about what features would be nice to have in the task tracker and put together a plan for how to build it.</em></p>
+</section>
+</section>
+</section>
+<section id="to-prd" class="level1">
+<h1><code>/to-prd</code></h1>
+<section id="what-it-does-1" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-does-1">What it does</h2>
+<p>Synthesizes the conversation context into a structured PRD and publishes it to the issue tracker. No additional interviewing — it works from what’s already been established.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td>Conversation context from <code>/grill-with-docs</code> + codebase</td>
+</tr>
+<tr class="even">
+<td><strong>Output</strong></td>
+<td>PRD published as a GitHub issue</td>
+</tr>
+<tr class="odd">
+<td><strong>When to use</strong></td>
+<td>After grilling, when the domain is clear</td>
+</tr>
+<tr class="even">
+<td><strong>Key behavior</strong></td>
+<td>Looks for deep modules; no re-interviewing</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inside-the-skill-1" class="level2">
+<h2 class="anchored" data-anchor-id="inside-the-skill-1">Inside the skill</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Sketch out the major modules you will need to build or modify</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>to complete the implementation. Actively look for opportunities</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>to extract deep modules that can be tested in isolation.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>A deep module (as opposed to a shallow module) is one which</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>encapsulates a lot of functionality in a simple, testable</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>interface which rarely changes.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/a_philosophy_of_software_design_cover_amazon_20260603.jpg" style="height:200px; vertical-align:middle; margin-right:8px;"><strong>A Philosophy of Software Design</strong> — John Ousterhout</p>
+</div>
+</div>
+</section>
+<section id="demo-1" class="level2" data-background-color="#1a1a2e">
+<h2 data-background-color="#1a1a2e" class="anchored" data-anchor-id="demo-1">DEMO</h2>
+<section id="to-prd-1" class="level3">
+<h3 class="anchored" data-anchor-id="to-prd-1"><code>/to-prd</code></h3>
+<p><em>Switch to terminal — run <code>/to-prd</code> continuing from the grilling session</em></p>
+<ul>
+<li>Ask for an explaination of how the deep modules concept is achieved</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="to-issues" class="level1">
+<h1><code>/to-issues</code></h1>
+<section id="what-it-does-2" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-does-2">What it does</h2>
+<p>Breaks the PRD into independently-grabbable issues using vertical slices. Each issue cuts through all layers end-to-end and is either AFK (agent can run it) or HITL (needs human interaction).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td>PRD from <code>/to-prd</code> (issue number or conversation context)</td>
+</tr>
+<tr class="even">
+<td><strong>Output</strong></td>
+<td>GitHub issues published in dependency order</td>
+</tr>
+<tr class="odd">
+<td><strong>When to use</strong></td>
+<td>After PRD is approved</td>
+</tr>
+<tr class="even">
+<td><strong>Key behavior</strong></td>
+<td>Thin vertical slices; AFK vs HITL classification</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inside-the-skill-2" class="level2">
+<h2 class="anchored" data-anchor-id="inside-the-skill-2">Inside the skill</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Break the plan into tracer bullet issues. Each issue is a</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>thin vertical slice that cuts through ALL integration layers</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>end-to-end, NOT a horizontal slice of one layer.</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each slice delivers a narrow but COMPLETE path through</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  every layer (schema, API, UI, tests)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A completed slice is demoable or verifiable on its own</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prefer many thin slices over few thick ones</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/the_pragmatic_programmer_cover_amazon_20260603.jpg" style="height:200px; vertical-align:middle; margin-right:8px;"><strong>The Pragmatic Programmer</strong> — David Thomas &amp; Andrew Hunt</p>
+</div>
+</div>
+</section>
+<section id="demo-2" class="level2" data-background-color="#1a1a2e">
+<h2 data-background-color="#1a1a2e" class="anchored" data-anchor-id="demo-2">DEMO</h2>
+<section id="to-issues-1" class="level3">
+<h3 class="anchored" data-anchor-id="to-issues-1"><code>/to-issues</code></h3>
+<p><em>Switch to terminal — run <code>/to-issues</code> on the PRD</em></p>
+<ul>
+<li>Ask for an explaination of how the vertical slices and tracer bullets concept is achieved for each item in the breakdown.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="what-just-happened" class="level1">
+<h1>What Just Happened?</h1>
+<section id="from-idea-to-execution-ready-plan" class="level2">
+<h2 class="anchored" data-anchor-id="from-idea-to-execution-ready-plan">From idea to execution-ready plan</h2>
+<p>In three skill invocations, we went from a rough idea to:</p>
+<ul>
+<li>A <strong>CONTEXT.md</strong> with resolved domain terminology</li>
+<li>A <strong>PRD</strong> published as a GitHub issue with user stories, modules, and testing decisions</li>
+<li>A set of <strong>vertical slice issues</strong>, each independently grabbable by an agent</li>
+</ul>
+</section>
+<section id="the-issues-are-agent-ready" class="level2">
+<h2 class="anchored" data-anchor-id="the-issues-are-agent-ready">The issues are agent-ready</h2>
+<p>Each issue produced by <code>/to-issues</code>:</p>
+<ul>
+<li>Describes an end-to-end behavior (not a layer)</li>
+<li>Has acceptance criteria</li>
+<li>Declares its blockers</li>
+<li>Is classified AFK (agent can run it) or HITL (human decision needed)</li>
+</ul>
+<p>A fleet of parallel agents can now pick up the AFK issues and start building immediately.</p>
+</section>
+</section>
+<section id="classic-se-still-matters" class="level1">
+<h1>Classic SE Still Matters</h1>
+<section id="the-books-are-in-the-skills" class="level2">
+<h2 class="anchored" data-anchor-id="the-books-are-in-the-skills">The books are in the skills</h2>
+<p>Matt’s skills aren’t just prompt wrappers — they encode opinions from decades of software engineering thought.</p>
+<table>
+<thead>
+<tr>
+<th colspan="2">
+Book
+</th>
+<th>
+Author
+</th>
+<th>
+Concept in the skills
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<img src="images/a_philosophy_of_software_design_cover_amazon_20260603.jpg" style="height:150px; vertical-align:middle;">
+</td>
+<td>
+<em>A Philosophy of Software Design</em>
+</td>
+<td>
+John Ousterhout
+</td>
+<td>
+Deep modules in <br><code>/to-prd</code>
+</td>
+</tr>
+<tr>
+<td>
+<img src="images/the_pragmatic_programmer_cover_amazon_20260603.jpg" style="height:150px; vertical-align:middle;">
+</td>
+<td>
+<em>The Pragmatic Programmer</em>
+</td>
+<td>
+Thomas &amp; Hunt
+</td>
+<td>
+Tracer bullets in <br><code>/to-issues</code>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The skills force the AI to think the way experienced engineers think — not just generate code, but design well.</p>
+</section>
+</section>
+<section id="where-to-go-next" class="level1">
+<h1>Where to Go Next</h1>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p><strong>Matt Pocock</strong></p>
+<ul>
+<li>Skills repo + install script: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></li>
+<li>“Software Fundamentals Matter More Than Ever”: <a href="https://www.youtube.com/watch?v=v4F1gFy-hqg">youtube.com/watch?v=v4F1gFy-hqg</a></li>
+<li>YouTube channel: <a href="https://www.youtube.com/@mattpocockuk">https://www.youtube.com/<span class="citation" data-cites="mattpocockuk">@mattpocockuk</span></a></li>
+</ul>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<div style="display: flex; justify-content: space-evenly; align-items: flex-start; width: 100%; padding-top: 8px;">
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/a_philosophy_of_software_design_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">A Philosophy of Software Design</div>
+    <div style="font-size: 0.72em; color: #555;">John Ousterhout</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/the_pragmatic_programmer_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">The Pragmatic Programmer</div>
+    <div style="font-size: 0.72em; color: #555;">Thomas &amp; Hunt</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/the_design_of_design_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">The Design of Design</div>
+    <div style="font-size: 0.72em; color: #555;">Frederick P. Brooks</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/domain_driven_design_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">Domain-Driven Design</div>
+    <div style="font-size: 0.72em; color: #555;">Eric Evans</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/extreme_programming_explained_2nd_ed_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">Extreme Programming Explained</div>
+    <div style="font-size: 0.72em; color: #555;">Kent Beck</div>
+  </div>
+
+</div>
+</section>
+<section id="try-it-tonight" class="level2">
+<h2 class="anchored" data-anchor-id="try-it-tonight">Try it tonight</h2>
+<ol type="1">
+<li>Install Matt’s skills: <code>git clone https://github.com/mattpocock/skills &amp;&amp; ./link-skills.sh</code></li>
+<li>Pick a project you’ve been putting off starting</li>
+<li>Run <code>/grill-with-docs</code>, then <code>/to-prd</code>, then <code>/to-issues</code></li>
+<li>Hand the issues to an agent and watch it go</li>
+</ol>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

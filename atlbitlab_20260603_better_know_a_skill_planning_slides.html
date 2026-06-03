@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/clipboard/clipboard.min.js"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/tabby.min.js"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/popper.min.js"></script>
+<script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-html/quarto-syntax-highlighting-c02e96a55a3fac3aceec3c7506c22d80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.7">
+
+  <meta name="author" content="Derrick Kearney">
+  <meta name="dcterms.date" content="2026-06-03">
+  <title>Better Know A Skill: Matt Pocock’s PLANNINGSkills for Engineers</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="atlbitlab_20260603_better_know_a_skill_planning_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Better Know A Skill:<br>Matt Pocock’s<br><span style="display:inline-block; color:red; border:4px solid red; border-radius:4px; font-size:0.30em; font-weight:900; letter-spacing:0.15em; opacity:0.85; transform:rotate(-45deg); vertical-align:middle; margin-right:-50px; font-family:serif; text-shadow:1px 1px 2px rgba(180,0,0,0.4); box-shadow:2px 2px 4px rgba(180,0,0,0.3);">PLANNING</span>Skills for Engineers</h1>
+  <p class="subtitle">ATL BitLab AI Builders #18</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Derrick Kearney
+</div>
+</div>
+</div>
+
+  <p class="date">2026-06-03</p>
+</section>
+<section>
+<section id="what-is-a-claude-code-skill" class="title-slide slide level1 center">
+<h1>What is a Claude Code Skill?</h1>
+
+</section>
+<section id="skills-extend-claudes-behavior" class="slide level2">
+<h2>Skills extend Claude’s behavior</h2>
+<p>A <strong>skill</strong> is a markdown file that teaches Claude a new capability.</p>
+<ul>
+<li>Invoke manually with <code>/skill-name</code> in Claude Code</li>
+<li>Lives in your personal library: <code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code></li>
+<li>No code changes, no restarts — edit the file and it’s live</li>
+</ul>
+</section>
+<section id="skills-can-be-dangerous" class="slide level2">
+<h2>Skills can be dangerous</h2>
+<p>Skills run with your permissions, in your environment, with access to your files.</p>
+<p>Public skill marketplaces have a real security problem:</p>
+<ul>
+<li><strong>Credential theft</strong> — skills that read AWS keys, tokens, and config files and exfiltrate them to attacker servers</li>
+<li><strong>Malware installation</strong> — skills that download and execute malicious payloads on your machine</li>
+<li><strong>Memory poisoning</strong> — hidden directives injected into agent memory files that persist even after the skill is removed</li>
+<li><strong>Intent hijacking</strong> — skills that silently execute unauthorized operations while appearing to do what you asked</li>
+</ul>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Security researchers have confirmed malicious skills in public marketplaces combining malicious code with prompt injection techniques.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-three-nos-principle" class="slide level2">
+<h2>The Three No’s Principle</h2>
+<p>Before installing any skill from outside your own team:</p>
+<div style="font-size: 0.75em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 37%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Rule</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>No unknown authors</td>
+<td>Skills are code — treat them like a dependency. Check the author’s GitHub history.</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>No excessive filesystem or network access</td>
+<td>A skill that needs to read your <code>~/.aws</code> folder to “help with docs” is a red flag.</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>No skills without a public, inspectable source</td>
+<td>If you can’t read the <code>SKILL.md</code> before installing, don’t install it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Matt’s skills are open source, written by a known author, and fully inspectable before installation.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Three No’s Principle via <a href="https://medium.com/@JadenNews/warning-about-341-malicious-skills-ai-agent-security-has-become-web3s-weakest-entry-point-2804103a75b4">JadenNews on Medium</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="learn-more-skill-security" class="slide level2">
+<h2>Learn More: Skill Security</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.threatdown.com/blog/weaponizing-autonomy-the-rise-of-malicious-ai-agent-skills/">ThreatDown: Weaponizing Autonomy</a></td>
+<td>Attack vectors and memory poisoning in depth</td>
+</tr>
+<tr class="even">
+<td><a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">Snyk: ToxicSkills Audit</a></td>
+<td>First comprehensive security audit of a public skill marketplace</td>
+</tr>
+<tr class="odd">
+<td><a href="https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html">The Hacker News: ClawHavoc</a></td>
+<td>Campaign analysis and platform response</td>
+</tr>
+<tr class="even">
+<td><a href="https://medium.com/@JadenNews/warning-about-341-malicious-skills-ai-agent-security-has-become-web3s-weakest-entry-point-2804103a75b4">Medium: Warning About Malicious Skills</a></td>
+<td>User-facing framing and the Three No’s Principle origin</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="meet-matt-pocock" class="title-slide slide level1 center">
+<h1>Meet Matt Pocock</h1>
+
+</section>
+<section id="who-is-matt-pocock" class="slide level2">
+<h2>Who is Matt Pocock?</h2>
+<ul>
+<li>TypeScript educator and open source author</li>
+<li>Creator of popular TS learning resources (Total TypeScript)</li>
+<li>Recently turned his attention to AI tooling and Claude Code skills</li>
+<li>Thesis: <strong>classic software engineering principles matter more, not less, in the AI era</strong></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>“Software Fundamentals Matter More Than Ever” — <a href="https://www.youtube.com/watch?v=v4F1gFy-hqg">YouTube</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="his-skills-for-engineers" class="slide level2">
+<h2>His skills for engineers</h2>
+<p>Matt’s skills repo: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+<p>Today we focus on three skills that form a <strong>planning pipeline</strong>:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Skill</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/grill-with-docs</code></td>
+<td>Sharpen your idea through relentless questioning</td>
+</tr>
+<tr class="even">
+<td><code>/to-prd</code></td>
+<td>Turn the sharpened idea into a Product Requirements Document</td>
+</tr>
+<tr class="odd">
+<td><code>/to-issues</code></td>
+<td>Break the PRD into agent-ready vertical slices</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="installing-matts-skills" class="slide level2">
+<h2>Installing Matt’s skills</h2>
+<p>Matt Pocock’s skills repo includes an install script that copies skills into your personal library.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="co"># Clone and install</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">git</span> clone https://github.com/mattpocock/skills</span>
+<span id="cb1-3"><a href=""></a><span class="bu">cd</span> skills</span>
+<span id="cb1-4"><a href=""></a><span class="ex">./link-skills.sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Skills are then available in every Claude Code session as <code>/skill-name</code>.</p>
+</section></section>
+<section>
+<section id="the-planning-pipeline" class="title-slide slide level1 center">
+<h1>The Planning Pipeline</h1>
+
+</section>
+<section id="from-rough-idea-to-agent-ready-issues" class="slide level2">
+<h2>From rough idea to agent-ready issues</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  I["`Rough idea`"] --&gt; A["`use
+ /grill-with-docs
+ to sharp domain model`"]
+  A --&gt; B["`use
+ /to-prd
+ to create the PRD`"]
+  B --&gt; C["`use
+ /to-issues
+ to create agent-ready issues`"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Each skill picks up where the previous one left off, building on the conversation context.</p>
+</section></section>
+<section>
+<section id="grill-with-docs" class="title-slide slide level1 center">
+<h1><code>/grill-with-docs</code></h1>
+
+</section>
+<section id="what-it-does" class="slide level2">
+<h2>What it does</h2>
+<p>Interviews you relentlessly about your plan, one question at a time, until the domain is sharp and all ambiguity is resolved.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td>Your plan or idea (as conversation context)</td>
+</tr>
+<tr class="even">
+<td><strong>Output</strong></td>
+<td>Resolved terminology, updated <code>CONTEXT.md</code>, optional ADRs</td>
+</tr>
+<tr class="odd">
+<td><strong>When to use</strong></td>
+<td>Before writing any spec — when the language is fuzzy</td>
+</tr>
+<tr class="even">
+<td><strong>Key behavior</strong></td>
+<td>One question at a time, recommended answer included</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inside-the-skill" class="slide level2">
+<h2>Inside the skill</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href=""></a>Interview me relentlessly about every aspect of this plan</span>
+<span id="cb2-2"><a href=""></a>until we reach a shared understanding. Walk down each branch</span>
+<span id="cb2-3"><a href=""></a>of the design tree, resolving dependencies between decisions</span>
+<span id="cb2-4"><a href=""></a>one-by-one. For each question, provide your recommended answer.</span>
+<span id="cb2-5"><a href=""></a></span>
+<span id="cb2-6"><a href=""></a>Ask the questions one at a time, waiting for feedback on each</span>
+<span id="cb2-7"><a href=""></a>question before continuing.</span>
+<span id="cb2-8"><a href=""></a></span>
+<span id="cb2-9"><a href=""></a>If a question can be answered by exploring the codebase,</span>
+<span id="cb2-10"><a href=""></a>explore the codebase instead.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="demo" class="slide level2" data-background-color="#1a1a2e">
+<h2>DEMO</h2>
+<h3 id="grill-with-docs-1"><code>/grill-with-docs</code></h3>
+<p><em>Switch to terminal — run <code>/grill-with-docs</code> on the CLI task tracker repo</em></p>
+<p><br></p>
+<p><em><code>/grill-with-docs</code> we will be building a cli based task tracker in rust. we should probably use a sqlite database and store it and any other config files somewhere in the user’s home directory. the user should be able to work with the task tracker from the command line. i would like an interactive terminal user interface if possible. the user starts the cli program, can see what tasks there are and what state each teask is in, the user can add notes to tasks, move tasks between states, and set blockers showing that one task depends on another task being complete. let’s talk about what features would be nice to have in the task tracker and put together a plan for how to build it.</em></p>
+</section></section>
+<section>
+<section id="to-prd" class="title-slide slide level1 center">
+<h1><code>/to-prd</code></h1>
+
+</section>
+<section id="what-it-does-1" class="slide level2">
+<h2>What it does</h2>
+<p>Synthesizes the conversation context into a structured PRD and publishes it to the issue tracker. No additional interviewing — it works from what’s already been established.</p>
+<table class="caption-top">
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td>Conversation context from <code>/grill-with-docs</code> + codebase</td>
+</tr>
+<tr class="even">
+<td><strong>Output</strong></td>
+<td>PRD published as a GitHub issue</td>
+</tr>
+<tr class="odd">
+<td><strong>When to use</strong></td>
+<td>After grilling, when the domain is clear</td>
+</tr>
+<tr class="even">
+<td><strong>Key behavior</strong></td>
+<td>Looks for deep modules; no re-interviewing</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inside-the-skill-1" class="slide level2">
+<h2>Inside the skill</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a>Sketch out the major modules you will need to build or modify</span>
+<span id="cb3-2"><a href=""></a>to complete the implementation. Actively look for opportunities</span>
+<span id="cb3-3"><a href=""></a>to extract deep modules that can be tested in isolation.</span>
+<span id="cb3-4"><a href=""></a></span>
+<span id="cb3-5"><a href=""></a>A deep module (as opposed to a shallow module) is one which</span>
+<span id="cb3-6"><a href=""></a>encapsulates a lot of functionality in a simple, testable</span>
+<span id="cb3-7"><a href=""></a>interface which rarely changes.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><img src="images/a_philosophy_of_software_design_cover_amazon_20260603.jpg" style="height:200px; vertical-align:middle; margin-right:8px;"><strong>A Philosophy of Software Design</strong> — John Ousterhout</p>
+</div>
+</div>
+</div>
+</section>
+<section id="demo-1" class="slide level2" data-background-color="#1a1a2e">
+<h2>DEMO</h2>
+<h3 id="to-prd-1"><code>/to-prd</code></h3>
+<p><em>Switch to terminal — run <code>/to-prd</code> continuing from the grilling session</em></p>
+<ul>
+<li>Ask for an explaination of how the deep modules concept is achieved</li>
+</ul>
+</section></section>
+<section>
+<section id="to-issues" class="title-slide slide level1 center">
+<h1><code>/to-issues</code></h1>
+
+</section>
+<section id="what-it-does-2" class="slide level2">
+<h2>What it does</h2>
+<p>Breaks the PRD into independently-grabbable issues using vertical slices. Each issue cuts through all layers end-to-end and is either AFK (agent can run it) or HITL (needs human interaction).</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Input</strong></td>
+<td>PRD from <code>/to-prd</code> (issue number or conversation context)</td>
+</tr>
+<tr class="even">
+<td><strong>Output</strong></td>
+<td>GitHub issues published in dependency order</td>
+</tr>
+<tr class="odd">
+<td><strong>When to use</strong></td>
+<td>After PRD is approved</td>
+</tr>
+<tr class="even">
+<td><strong>Key behavior</strong></td>
+<td>Thin vertical slices; AFK vs HITL classification</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inside-the-skill-2" class="slide level2">
+<h2>Inside the skill</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a>Break the plan into tracer bullet issues. Each issue is a</span>
+<span id="cb4-2"><a href=""></a>thin vertical slice that cuts through ALL integration layers</span>
+<span id="cb4-3"><a href=""></a>end-to-end, NOT a horizontal slice of one layer.</span>
+<span id="cb4-4"><a href=""></a></span>
+<span id="cb4-5"><a href=""></a><span class="ss">- </span>Each slice delivers a narrow but COMPLETE path through</span>
+<span id="cb4-6"><a href=""></a>  every layer (schema, API, UI, tests)</span>
+<span id="cb4-7"><a href=""></a><span class="ss">- </span>A completed slice is demoable or verifiable on its own</span>
+<span id="cb4-8"><a href=""></a><span class="ss">- </span>Prefer many thin slices over few thick ones</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><img src="images/the_pragmatic_programmer_cover_amazon_20260603.jpg" style="height:200px; vertical-align:middle; margin-right:8px;"><strong>The Pragmatic Programmer</strong> — David Thomas &amp; Andrew Hunt</p>
+</div>
+</div>
+</div>
+</section>
+<section id="demo-2" class="slide level2" data-background-color="#1a1a2e">
+<h2>DEMO</h2>
+<h3 id="to-issues-1"><code>/to-issues</code></h3>
+<p><em>Switch to terminal — run <code>/to-issues</code> on the PRD</em></p>
+<ul>
+<li>Ask for an explaination of how the vertical slices and tracer bullets concept is achieved for each item in the breakdown.</li>
+</ul>
+</section></section>
+<section>
+<section id="what-just-happened" class="title-slide slide level1 center">
+<h1>What Just Happened?</h1>
+
+</section>
+<section id="from-idea-to-execution-ready-plan" class="slide level2">
+<h2>From idea to execution-ready plan</h2>
+<p>In three skill invocations, we went from a rough idea to:</p>
+<ul>
+<li>A <strong>CONTEXT.md</strong> with resolved domain terminology</li>
+<li>A <strong>PRD</strong> published as a GitHub issue with user stories, modules, and testing decisions</li>
+<li>A set of <strong>vertical slice issues</strong>, each independently grabbable by an agent</li>
+</ul>
+</section>
+<section id="the-issues-are-agent-ready" class="slide level2">
+<h2>The issues are agent-ready</h2>
+<p>Each issue produced by <code>/to-issues</code>:</p>
+<ul>
+<li>Describes an end-to-end behavior (not a layer)</li>
+<li>Has acceptance criteria</li>
+<li>Declares its blockers</li>
+<li>Is classified AFK (agent can run it) or HITL (human decision needed)</li>
+</ul>
+<p>A fleet of parallel agents can now pick up the AFK issues and start building immediately.</p>
+</section></section>
+<section>
+<section id="classic-se-still-matters" class="title-slide slide level1 center">
+<h1>Classic SE Still Matters</h1>
+
+</section>
+<section id="the-books-are-in-the-skills" class="slide level2">
+<h2>The books are in the skills</h2>
+<p>Matt’s skills aren’t just prompt wrappers — they encode opinions from decades of software engineering thought.</p>
+<table>
+<thead>
+<tr>
+<th colspan="2">
+Book
+</th>
+<th>
+Author
+</th>
+<th>
+Concept in the skills
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<img src="images/a_philosophy_of_software_design_cover_amazon_20260603.jpg" style="height:150px; vertical-align:middle;">
+</td>
+<td>
+<em>A Philosophy of Software Design</em>
+</td>
+<td>
+John Ousterhout
+</td>
+<td>
+Deep modules in <br><code>/to-prd</code>
+</td>
+</tr>
+<tr>
+<td>
+<img src="images/the_pragmatic_programmer_cover_amazon_20260603.jpg" style="height:150px; vertical-align:middle;">
+</td>
+<td>
+<em>The Pragmatic Programmer</em>
+</td>
+<td>
+Thomas &amp; Hunt
+</td>
+<td>
+Tracer bullets in <br><code>/to-issues</code>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The skills force the AI to think the way experienced engineers think — not just generate code, but design well.</p>
+</section></section>
+<section>
+<section id="where-to-go-next" class="title-slide slide level1 center">
+<h1>Where to Go Next</h1>
+
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<p><strong>Matt Pocock</strong></p>
+<ul>
+<li>Skills repo + install script: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></li>
+<li>“Software Fundamentals Matter More Than Ever”: <a href="https://www.youtube.com/watch?v=v4F1gFy-hqg">youtube.com/watch?v=v4F1gFy-hqg</a></li>
+<li>YouTube channel: <a href="https://www.youtube.com/@mattpocockuk">https://www.youtube.com/<span class="citation" data-cites="mattpocockuk">@mattpocockuk</span></a></li>
+</ul>
+</section>
+<section id="further-reading" class="slide level2">
+<h2>Further Reading</h2>
+<div style="display: flex; justify-content: space-evenly; align-items: flex-start; width: 100%; padding-top: 8px;">
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/a_philosophy_of_software_design_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">A Philosophy of Software Design</div>
+    <div style="font-size: 0.72em; color: #555;">John Ousterhout</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/the_pragmatic_programmer_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">The Pragmatic Programmer</div>
+    <div style="font-size: 0.72em; color: #555;">Thomas &amp; Hunt</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/the_design_of_design_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">The Design of Design</div>
+    <div style="font-size: 0.72em; color: #555;">Frederick P. Brooks</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/domain_driven_design_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">Domain-Driven Design</div>
+    <div style="font-size: 0.72em; color: #555;">Eric Evans</div>
+  </div>
+
+  <div style="text-align: center; width: 175px;">
+    <img src="images/extreme_programming_explained_2nd_ed_cover_amazon_20260603.jpg" style="height: 175px;">
+    <div style="font-size: 0.85em; font-style: italic; margin-top: 4px; line-height: 1.2;">Extreme Programming Explained</div>
+    <div style="font-size: 0.72em; color: #555;">Kent Beck</div>
+  </div>
+
+</div>
+</section>
+<section id="try-it-tonight" class="slide level2">
+<h2>Try it tonight</h2>
+<ol type="1">
+<li>Install Matt’s skills: <code>git clone https://github.com/mattpocock/skills &amp;&amp; ./link-skills.sh</code></li>
+<li>Pick a project you’ve been putting off starting</li>
+<li>Run <code>/grill-with-docs</code>, then <code>/to-prd</code>, then <code>/to-issues</code></li>
+<li>Hand the issues to an agent and watch it go</li>
+</ol>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="atlbitlab_20260603_better_know_a_skill_planning_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
