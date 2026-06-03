@@ -1,0 +1,4 @@
+project:
+  type: default
+  render:
+    - atlbitlab_20260603_better_know_a_skill_planning.qmd
