@@ -161,6 +161,10 @@ explore the codebase instead.
 
 *Switch to terminal — run `/grill-with-docs` on the CLI task tracker repo*
 
+<br>
+
+*`/grill-with-docs` we will be building a cli based task tracker in rust. we should probably use a sqlite database and store it and any other config files somewhere in the user's home directory. the user should be able to work with the task tracker from the command line. i would like an interactive terminal user interface if possible. the user starts the cli program, can see what tasks there are and what state each teask is in, the user can add notes to tasks, move tasks between states, and set blockers showing that one task depends on another task being complete. let's talk about what features would be nice to have in the task tracker and put together a plan for how to build it.*
+
 # `/to-prd`
 
 ## What it does
@@ -195,6 +199,9 @@ interface which rarely changes.
 ### `/to-prd`
 
 *Switch to terminal — run `/to-prd` continuing from the grilling session*
+
+* Ask for an explaination of how the deep modules concept is achieved
+
 
 # `/to-issues`
 
@@ -231,6 +238,10 @@ end-to-end, NOT a horizontal slice of one layer.
 ### `/to-issues`
 
 *Switch to terminal — run `/to-issues` on the PRD*
+
+* Ask for an explaination of how the vertical slices and tracer bullets concept is achieved for each item in the breakdown.
+
+
 
 # What Just Happened?
 
