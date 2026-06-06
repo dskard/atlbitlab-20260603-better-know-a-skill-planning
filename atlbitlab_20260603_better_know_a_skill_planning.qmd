@@ -1,5 +1,5 @@
 ---
-title: "Better Know A Skill:<br>Matt Pocock's<br><span style='display:inline-block; color:red; border:4px solid red; border-radius:4px; font-size:0.30em; font-weight:900; letter-spacing:0.15em; opacity:0.85; transform:rotate(-45deg); vertical-align:middle; margin-right:-50px; font-family:serif; text-shadow:1px 1px 2px rgba(180,0,0,0.4); box-shadow:2px 2px 4px rgba(180,0,0,0.3);'>PLANNING</span>Skills for Engineers"
+title: "Better Know A Skill:<br>Matt Pocock's<br><span class='planning-stamp' style='display:inline-block; color:red; border:4px solid red; border-radius:4px; font-size:0.30em; font-weight:900; letter-spacing:0.15em; opacity:0.85; transform:rotate(-45deg); vertical-align:middle; margin-right:-50px; font-family:serif; text-shadow:1px 1px 2px rgba(180,0,0,0.4); box-shadow:2px 2px 4px rgba(180,0,0,0.3);'>PLANNING</span>Skills for Engineers"
 subtitle: "ATL BitLab AI Builders #18"
 author: "Derrick Kearney"
 date: "2026-06-03"
@@ -9,6 +9,7 @@ format:
     toc-depth: 3
     code-copy: true
     code-overflow: wrap
+    css: styles-html.css
   revealjs:
     theme: default
     slide-number: true
