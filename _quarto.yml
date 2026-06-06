@@ -2,3 +2,9 @@ project:
   type: default
   render:
     - atlbitlab_20260603_better_know_a_skill_planning.qmd
+
+format:
+  revealjs:
+    output-file: atlbitlab_20260603_better_know_a_skill_planning_slides.html
+  html:
+    output-file: atlbitlab_20260603_better_know_a_skill_planning.html
